@@ -19,8 +19,8 @@ func Scan(output chan<- string) {
 
 	err := scanner.Err()
 	if err != nil {
-		fmt.Fprint(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, err)
 	} else {
-		fmt.Fprint(os.Stdout, "No more input")
+		fmt.Fprintln(os.Stdout, "No more input")
 	}
 }

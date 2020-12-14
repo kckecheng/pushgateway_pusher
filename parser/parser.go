@@ -6,16 +6,21 @@ import (
 	"regexp"
 	"strconv"
 
+	"github.com/kckecheng/pushgateway_pusher/types"
 	"gopkg.in/yaml.v2"
 )
 
 // Parser fields' definitions and the regular expression pattern to extract them
+// type Parser struct {
+// 	Pattern string `yaml:"pattern"`
+// 	Fields  []struct {
+// 		Name        string `yaml:"name"`
+// 		Description string `yaml:"description"`
+// 	} `yaml:"fields"`
+// }
 type Parser struct {
-	Pattern string `yaml:"pattern"`
-	Fields  []struct {
-		Name        string `yaml:"name"`
-		Description string `yaml:"description"`
-	} `yaml:"fields"`
+	Pattern string        `yaml:"pattern"`
+	Fields  []types.Field `yaml:"fields"`
 }
 
 // New init a Parser
