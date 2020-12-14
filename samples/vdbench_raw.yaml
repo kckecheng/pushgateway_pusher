@@ -1,0 +1,31 @@
+---
+# 20:58:05.007           1       64.0     0.06    1024  46.88    0.011    0.008    0.014     0.02     0.03    0.007    0.0   7.0   1.8
+# VDBench file system test focusing on key metrics
+pattern: ^(?:.*?)\s+?(?:\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)$
+fields:
+  - name: io_rate
+    description: "IOPS"
+  - name: mb_ps
+    description: "Throughput in MB/s"
+  - name: bytes
+    description: "IO size"
+  - name: read_pct
+    description: "Read ops in %"
+  - name: resp_time
+    description: "Overall read write latency in ms"
+  - name: read_resp
+    description: "Read latency in ms"
+  - name: write_resp
+    description: "Write latency in ms"
+  - name: read_max
+    description: "Max read latency in ms"
+  - name: write_max
+    description: "Max write latency in ms"
+  - name: resp_stddev
+    description: "Overall read write latency STD in ms"
+  - name: q_depth
+    description: "Queue depth"
+  - name: cpu_total
+    description: "CPU usage in %"
+  - name: cpu_sys
+    description: "CPU sys usage in %"

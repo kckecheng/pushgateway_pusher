@@ -1,0 +1,30 @@
+---
+# VDBench file system test focusing on key metrics
+pattern: ^(?:.*?)\s+?(?:\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)\s+?(?:\d+?\.?\d*?)$
+fields:
+  - name: req_std_ops_rate
+    description: "IOPS"
+  - name: req_std_ops_resp
+    description: "Latency in ms"
+  - name: cpu_total
+    description: "CPU total usage in %"
+  - name: cpu_sys
+    description: "CPU system usage in %"
+  - name: read_pct
+    description: "Read ops in %"
+  - name: read_rate
+    description: "Read IOPS"
+  - name: read_resp
+    description: "Read latency in ms"
+  - name: write_rate
+    description: "Write IOPS"
+  - name: write_resp
+    description: "Write latency in ms"
+  - name: read_mb_ps
+    description: "Read MB/s"
+  - name: write_mb_ps
+    description: "Write MB/s"
+  - name: total_mb_ps
+    description: "Read and Write MB/s"
+  - name: xfer_size
+    description: "IO size in byte"
