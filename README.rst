@@ -15,7 +15,7 @@ Notes
 ------
 
 - The pattern to extract fields should follow `go regexp syntax <https://pkg.go.dev/regexp/syntax>`_
-- This tool depends on line buffering. If a program (such as iperf3) does not use line buffering, this tool won' work. The workaround on Linux is chaning the buffer options with **stdbuf** as below:
+- This tool depends on line buffering. If a program (such as iperf3) does not use line buffering, this tool won't work. The workaround on Linux is changing the buffer options with **stdbuf** as below (I have no idea on how to achieve the same effect on Windows:():
 
   ::
 
