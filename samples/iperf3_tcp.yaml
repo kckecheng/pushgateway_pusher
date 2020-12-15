@@ -1,0 +1,12 @@
+---
+# iperf3 TCP
+pattern: ^(?:.*?\s+?sec)\s+?(\d+?\.?\d*?)\s+?(?:\D+?)\s+?(\d+?\.?\d*?)\s+?(?:\D+?)\s+?(\d+?)\s+?(\d+?\.?\d*?)\s+?(?:\D+?)$
+fields:
+  - name: bandwidth
+    description: "Data transfered, the unit is based on iperf3 -f parameters"
+  - name: throughput
+    description: "Data transfer rate, the unit is based on iperf3 -f parameters"
+  - name: retry
+    description: "Num. of retry"
+  - name: cwnd
+    description: "Congestion window"

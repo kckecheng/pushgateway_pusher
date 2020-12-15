@@ -1,7 +1,7 @@
 About
 ======
 
-A simple tool which supports extracting metrics from multiple tools (VDBench, iPerf and more) and push the metrics to a Prometheus Pushgateway for smooth observation.
+This tool extracts metrics from benchmark tools (VDBench, iPerf and more) and push the collected metrics to a Prometheus Pushgateway for prometheus integration.
 
 Usage
 ------
@@ -9,9 +9,22 @@ Usage
 ::
 
   ./pushgateway_pusher --help
-  <some tool> <tool options ...> | ./pushgateway_pusher -a vdbenchfs -f <fields definition yaml> -g <Prometheus pushgatway such as http://localhost:9021> -j <job name>
+  <benchmark tool> <options ...> | ./pushgateway_pusher -a <application name> -f <fields definition yaml> -g <Prometheus pushgatway such as http://localhost:9091> -j <job name>
 
 Notes
 ------
 
-- The pattern to extract fields should follow https://pkg.go.dev/regexp/syntax
+- The pattern to extract fields should follow `go regexp syntax <https://pkg.go.dev/regexp/syntax>`_
+- This tool depends on line buffering. If a program (such as iperf3) does not use line buffering, this tool won' work. The workaround on Linux is chaning the buffer options with **stdbuf** as below:
+
+  ::
+
+    stdbuf -oL -eL iperf3  -c 192.168.100.100 -t 3600 -i 10 -f M |\
+      ./pushgateway_pusher -a iperf3 -g http://192.168.100.200:9091 -j iperf_job1 -f iperf3_tcp.yaml
+- Since regular expression patterns to extract metrics may be complicated, turn on debug output as below for troubleshooting:
+
+  ::
+
+    # exprot DEBUG=false
+    export DEBUG=true
+    ...
